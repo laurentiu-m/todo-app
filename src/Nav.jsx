@@ -1,11 +1,22 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-
 function Nav() {
+  const date = new Date();
+
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  };
+
+  const formattedDate = date.toLocaleString("en-US", options);
+  const [weekday, dayMonth] = formattedDate.split(", ");
+
   return (
     <nav className="flex flex-row justify-between place-items-center">
-      <FontAwesomeIcon className="h-6" icon={faBars} />
-      <h2 className="font-bold text-xl">To-Do</h2>
+      <div className="font-light text-sm">
+        <span className="font-semibold text-base">{weekday},</span> {dayMonth}
+      </div>
+
+      <div className="text-sm">12 Tasks</div>
     </nav>
   );
 }
