@@ -1,4 +1,6 @@
-function Nav() {
+import PropTypes from "prop-types";
+
+function Nav({ tasksLength }) {
   const date = new Date();
 
   const options = {
@@ -16,9 +18,13 @@ function Nav() {
         <span className="font-semibold text-base">{weekday},</span> {dayMonth}
       </div>
 
-      <div className="text-sm">12 Tasks</div>
+      <div className="text-sm">{tasksLength} Tasks</div>
     </nav>
   );
 }
+
+Nav.propTypes = {
+  tasksLength: PropTypes.number,
+};
 
 export default Nav;

@@ -10,29 +10,35 @@ function App() {
     "Go to work",
   ]);
   const [newTask, setNewTask] = useState("");
+  const tasksLength = tasks.length;
 
   const handleInputChange = (e) => {
     setNewTask(e.target.value);
   };
 
-  const addTask = () => {
+  const addTask = (e) => {
+    e.preventDefault();
+
     if (newTask.trim() !== "") {
       setTasks((t) => [...t, newTask]);
       setNewTask("");
     }
   };
 
-  console.log(tasks);
+  const deleteTask = (taskIndex) => {
+    const updateTasks = tasks.filter((_, index) => index !== taskIndex);
+    setTasks(updateTasks);
+  };
 
   return (
     <main className="font-sans p-4 h-screen space-y-5 bg-black text-white">
-      <Nav />
+      <Nav tasksLength={tasksLength} />
       <TaskInput
         addTask={addTask}
         newTask={newTask}
         handleInputChange={handleInputChange}
       />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
     </main>
   );
 }
