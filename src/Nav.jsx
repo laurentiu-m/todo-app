@@ -16,11 +16,12 @@ function Nav({ tasksLength }) {
 
   return (
     <nav className="flex flex-row justify-between place-items-center">
-      <div className="font-base text-lg">
-        <span className="font-bold text-xl">{weekday},</span> {dayMonth}
+      <div className="font-base text-base lg:text-2xl">
+        <span className="font-bold text-lg lg:text-3xl">{weekday},</span>{" "}
+        {dayMonth}
       </div>
 
-      <div className="text-lg font-medium">
+      <div className="text-lg font-medium lg:text-2xl">
         {tasksLength} {tasksLength > 1 ? "Tasks" : "Task"}
       </div>
     </nav>
