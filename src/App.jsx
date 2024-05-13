@@ -43,15 +43,17 @@ function App() {
   };
 
   return (
-    <main className="font-sans min-h-[calc(100dvh)] p-4 space-y-5 bg-black text-white">
-      <Nav tasksLength={tasksLength} />
-      <TaskInput
-        addTask={addTask}
-        newTask={newTask}
-        handleInputChange={handleInputChange}
-        error={error}
-      />
-      <TaskList tasks={tasks} deleteTask={deleteTask} />
+    <main className="container mx-auto">
+      <div className="flex flex-col mx-auto font-sans min-h-[calc(100dvh)] p-5 space-y-5 text-white sm:p-10 md:p-12 lg:w-[80%] lg:px-0 lg:py-14 xl:w-[65%]">
+        <Nav tasksLength={tasksLength} />
+        <TaskInput
+          addTask={addTask}
+          newTask={newTask}
+          handleInputChange={handleInputChange}
+          error={error}
+        />
+        <TaskList tasks={tasks} deleteTask={deleteTask} />
+      </div>
     </main>
   );
 }
