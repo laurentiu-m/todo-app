@@ -1,8 +1,19 @@
-# React + Vite
+# Minimalist Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+A simple and minimalistic todo list application crafted with React, Tailwind CSS, and Vite. It works well on any device, has easy controls, and includes some nice animations and error handling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+
+- **Works Everywhere:** Use it on your phone, tablet, or computer.
+- **Easy to Use:** Just add your tasks and check them off when you're done.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Tailwind
+- Vite
