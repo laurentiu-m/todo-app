@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 function Nav({ tasksLength }) {
+  // Get today's date
   const date = new Date();
 
   const options = {
@@ -9,16 +10,19 @@ function Nav({ tasksLength }) {
     month: "long",
   };
 
+  // Format the date
   const formattedDate = date.toLocaleString("en-US", options);
   const [weekday, dayMonth] = formattedDate.split(", ");
 
   return (
     <nav className="flex flex-row justify-between place-items-center">
-      <div className="font-light text-sm">
-        <span className="font-semibold text-base">{weekday},</span> {dayMonth}
+      <div className="font-base text-lg">
+        <span className="font-bold text-xl">{weekday},</span> {dayMonth}
       </div>
 
-      <div className="text-sm">{tasksLength} Tasks</div>
+      <div className="text-lg font-medium">
+        {tasksLength} {tasksLength > 1 ? "Tasks" : "Task"}
+      </div>
     </nav>
   );
 }
